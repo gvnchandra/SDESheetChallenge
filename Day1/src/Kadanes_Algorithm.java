@@ -11,6 +11,24 @@ public class Kadanes_Algorithm {
             a[i]=s.nextInt();
         }
 
+        //met1:
+        /* traverse the array with three loops
+           max=0
+           for i from 0 to n-1
+              for j from i to n-1
+                  for k from i to j
+                       sum+=a[k]
+                  if(sum>max)
+                       max=sum
+           return max
+           time:O(n^3)
+        */
+
+        //met2
+        /*We can traverse the array with just two loops without needing
+         third loop in above method*/
+
+        //met3
         long maxc=a[0], maxg=a[0];
         /*According to the kadane's algorithm, the maximum sum subarray ending at the current index could be either of these
          [x] single element at that index or
