@@ -19,6 +19,8 @@ public class Longest_Consecutive_Sequence {
 
         int maxCount=0;
         for(int val:a){
+            //checking if the previous element exists in Hashmap
+            //because we are trying to find the minimum element in the sequence
             if(!has.contains(val-1)){
                 int curr=1, currNum=val+1;
                 while(has.contains(currNum)) {
