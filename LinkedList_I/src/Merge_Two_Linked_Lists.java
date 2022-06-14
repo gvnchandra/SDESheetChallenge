@@ -45,7 +45,7 @@ public class Merge_Two_Linked_Lists {
         }
 
         LinkedListNode res=h1;
-        while (h2 != null){
+        while (h1!=null && h2 != null){
             LinkedListNode temp=null;
             while (h1!=null && h1.data<=h2.data){
                 temp=h1;
