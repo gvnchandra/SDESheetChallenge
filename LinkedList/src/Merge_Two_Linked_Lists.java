@@ -58,6 +58,8 @@ public class Merge_Two_Linked_Lists {
             h2=t;
         }
         display(res);
+        //Time: O(n1+n2)
+        //Space: O(1)
     }
     static void display(Node res) {
         Node t=res;
