@@ -1,12 +1,5 @@
 import java.util.Scanner;
 
-class Node{
-    int data;
-    Node next;
-    Node(int data){
-        this.data=data;
-    }
-}
 public class Reversing_A_Linked_List {
     static Node head;
     static void insert(int data){
