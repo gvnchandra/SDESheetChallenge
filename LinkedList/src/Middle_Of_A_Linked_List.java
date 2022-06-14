@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Middle_Of_A_Linked_List {
-    static Node head;
+    static LinkedListNode head;
     static void insert(int data){
-        Node n=new Node(data);
+        LinkedListNode n=new LinkedListNode(data);
         if (head==null){
             head=n;
         }
         else {
-            Node te=head;
+            LinkedListNode te=head;
             while (te.next!=null)
                 te=te.next;
             te.next=n;
@@ -21,7 +21,7 @@ public class Middle_Of_A_Linked_List {
             insert(s.nextInt());
         }
 
-        Node sl=head, fa=head;
+        LinkedListNode sl=head, fa=head;
         while (fa!=null && fa.next!=null){
             sl=sl.next;
             fa =fa.next.next;

@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Reversing_A_Linked_List {
-    static Node head;
+    static LinkedListNode head;
     static void insert(int data){
-        Node n=new Node(data);
+        LinkedListNode n=new LinkedListNode(data);
         if (head==null){
             head=n;
         }
         else {
-            Node te=head;
+            LinkedListNode te=head;
             while (te.next!=null)
                 te=te.next;
             te.next=n;
@@ -22,7 +22,7 @@ public class Reversing_A_Linked_List {
         }
 
         //reversing a linked list
-        Node pre=null, curr=head, next;
+        LinkedListNode pre=null, curr=head, next;
         while (curr!=null){
             next=curr.next;
             curr.next=pre;
@@ -37,7 +37,7 @@ public class Reversing_A_Linked_List {
     }
 
     static void display() {
-        Node t=head;
+        LinkedListNode t=head;
         while (t!=null){
             System.out.print(t.data+" ");
             t=t.next;

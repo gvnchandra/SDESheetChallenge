@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Merge_Two_Linked_Lists {
+public class Add_Two_Linked_Lists {
     static LinkedListNode h1, h2;
     static void insert1(int data){
         LinkedListNode n=new LinkedListNode(data);
@@ -37,29 +37,27 @@ public class Merge_Two_Linked_Lists {
             insert2(s.nextInt());
         }
 
-        // Among h1 and h2, least value node assigned will be h1 always
-        if(h1.data>h2.data){
-            LinkedListNode t=h1;
-            h1=h2;
-            h2=t;
-        }
-
-        LinkedListNode res=h1;
-        while (h2 != null){
-            LinkedListNode temp=null;
-            while (h1!=null && h1.data<=h2.data){
-                temp=h1;
+        LinkedListNode dum=new LinkedListNode(-1), temp=dum;
+        int carry=0;
+        while(h1!=null || h2!=null || carry==1){
+            int sum=0;
+            if(h1!=null){
+                sum+=h1.data;
                 h1=h1.next;
             }
-            temp.next=h2;
+            if(h2!=null){
+                sum+=h2.data;
+                h2=h2.next;
+            }
 
-            LinkedListNode t=h1;
-            h1=h2;
-            h2=t;
+            sum+=carry;
+            carry=sum/10;
+            temp.next= new LinkedListNode(sum%10);
+            temp=temp.next;
         }
-        display(res);
-        //Time: O(n1+n2)
+        //Time: O(max(n1,n2))
         //Space: O(1)
+        display(dum.next);
     }
     static void display(LinkedListNode res) {
         LinkedListNode t=res;
